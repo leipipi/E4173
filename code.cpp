@@ -23,7 +23,7 @@ namespace Code
 	};
 	//const int lenlim[RectAreaCount] = { 426,432,1944,432,432,48,24 };
 	const int lenlim[RectAreaCount] = { 138,144,648,144,144,16,8 };
-	const int areapos[RectAreaCount][2][2] = //[2][2],µÚÒ»Î¬¶È´ú±í¸ß¿í£¬µÚ¶şÎ¬¶È´ú±í×óÉÏ½Ç×ø±ê
+	const int areapos[RectAreaCount][2][2] = //[2][2],ç¬¬ä¸€ç»´åº¦ä»£è¡¨é«˜å®½ï¼Œç¬¬äºŒç»´åº¦ä»£è¡¨å·¦ä¸Šè§’åæ ‡
 	{
 		{{69,16},{QrPointSize + 3,SafeAreaWidth}},
 		{{16,72},{SafeAreaWidth,QrPointSize}},
@@ -93,7 +93,7 @@ namespace Code
 	}
 	void BulidQrPoint(Mat& mat)
 	{
-		//»æÖÆ´ó¶şÎ¬ÂëÊ¶±ğµã
+		//ç»˜åˆ¶å¤§äºŒç»´ç è¯†åˆ«ç‚¹
 		constexpr int pointPos[4][2] = 
 		{ 
 			{0,0},
@@ -117,7 +117,7 @@ namespace Code
 				for (int k = 0; k < QrPointSize; ++k)
 					mat.at<Vec3b>(pointPos[i][0] + j, pointPos[i][1] + k) =
 						vec3bBig[(int)max(fabs(j-8.5), fabs(k-8.5))];
-		//»æÖÆĞ¡¶şÎ¬ÂëÊ¶±ğµã
+		//ç»˜åˆ¶å°äºŒç»´ç è¯†åˆ«ç‚¹
 		constexpr int posCenter[2] = { FrameSize - SmallQrPointbias,FrameSize - SmallQrPointbias };
 		const Vec3b vec3bsmall[5] =
 		{ 
@@ -306,5 +306,5 @@ namespace Code
 			};
 		}
 		return;
-	}
+	
 }
